@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Noticias - BandiCraft Network</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* Fondo de partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #0d0d0d;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        main {
+            padding: 100px 50px 50px;
+            color: #fff;
+        }
+        main h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        article {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff3c00;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        article:hover {
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+        }
+
+        .news-title {
+            color: #ff3c00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo de partículas -->
+    <div id="particles-js"></div>
+
+<header>
+    <div class="header-top">
+        <img src="../assets/img/Bandi_Craft_Logo.png" alt="BandiCraft Logo" class="logo">
+        <div class="title-social-container">
+            <div class="title-section">
+                <h1 class="titulo">Bandicraft Network</h1>
+                <p class="p-title">Survival custom, boxpvp y más!</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://discord.gg/Rux7WgPRbQ" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-discord-50.png" alt="Discord">
+                </a>
+                <a href="https://www.youtube.com/@BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-youtube-50.png" alt="YouTube">
+                </a>
+                <a href="https://twitter.com/BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-twitter-50.png" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+        <nav class="nav-card">
+            <a href="index.html">Inicio</a>
+            <a href="news.html">Noticias</a>
+            <a href="server.html">Servidor</a>
+            <a href="about.html">Sobre Nosotros</a>
+            <a href="support.html">Soporte</a>
+            <a href="tops.html">Tops</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="news-title">Últimas Noticias</h1>
+
+        <article>
+            <h2>Actualización de Mazmorras</h2>
+            <p>¡Nuevos enemigos, recompensas únicas y más desafíos en nuestras mazmorras! Prepara tus armas y entra al combate.</p>
+        </article>
+
+        <article>
+            <h2>BoxPvP ¡Disponible!</h2>
+            <p>¡Una nueva modalidad para demostrar tus habilidades de combate! Entra al BoxPvP y conviértete en leyenda.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BandiCraft Network</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        /* Configuración de partículas */
+        particlesJS('particles-js',
+        {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

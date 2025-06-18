@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor - BandiCraft Network</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* Estilo general */
+
+        /* Partículas al fondo */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        main {
+            padding: 20px 20px;
+            max-width: 900px;
+            margin: auto;
+            margin-top: 40px;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 0 20px #ff3c00;
+        }
+
+        main h1, main h2, main h3 {
+            color: #ff3c00;
+        }
+
+        .online {
+            text-align: right;
+            margin-bottom: auto;
+        }
+        .info-servidor p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .modalidades {
+            margin-top: 30px;
+        }
+
+        .modo {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #ff3c00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .modo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 10px #ff3c00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(20, 20, 20, 0.9);
+            margin-top: 40px;
+            border-top: 2px solid#ff3c00;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+<header>
+    <div class="header-top">
+        <img src="../assets/img/Bandi_Craft_Logo.png" alt="BandiCraft Logo" class="logo">
+        <div class="title-social-container">
+            <div class="title-section">
+                <h1 class="titulo">Bandicraft Network</h1>
+                <p class="p-title">Survival custom, boxpvp y más!</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://discord.gg/Rux7WgPRbQ" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-discord-50.png" alt="Discord">
+                </a>
+                <a href="https://www.youtube.com/@BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-youtube-50.png" alt="YouTube">
+                </a>
+                <a href="https://twitter.com/BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-twitter-50.png" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+        <nav class="nav-card">
+            <a href="index.html">Inicio</a>
+            <a href="news.html">Noticias</a>
+            <a href="server.html">Servidor</a>
+            <a href="about.html">Sobre Nosotros</a>
+            <a href="support.html">Soporte</a>
+            <a href="tops.html">Tops</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="info-servidor">
+            <h2>Información del Servidor</h2>
+            <p><strong>IP:</strong> bandicraft.ulaloud.com</p>
+            <p><strong>Versiones:</strong> 1.13.x - 1.21.x</p>
+        </section>
+
+        <section class="modalidades">
+            <h2>Modalidades Disponibles</h2>
+            <div class="modo">
+                <h3>Survival Custom</h3>
+                <p>Mundo survival con economía, rangos, mazmorras y eventos especiales.</p>
+                <p class="online"><img class="users" src="../assets/img/usuario.png"> 0/100</p>
+            </div>
+            <div class="modo">
+                <h3>BoxPvp</h3>
+                <p>Combates en cajas con kits personalizados y arenas de batalla.</p>
+                <p class="online"><img class="users" src="../assets/img/usuario.png"> 0/100</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BandiCraft Network</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        /* Configuración de partículas */
+        particlesJS('particles-js',
+        {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

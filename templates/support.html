@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Soporte - BandiCraft Network</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+<header>
+    <div class="header-top">
+        <img src="../assets/img/Bandi_Craft_Logo.png" alt="BandiCraft Logo" class="logo">
+        <div class="title-social-container">
+            <div class="title-section">
+                <h1 class="titulo">Bandicraft Network</h1>
+                <p class="p-title">Survival custom, boxpvp y más!</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://discord.gg/Rux7WgPRbQ" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-discord-50.png" alt="Discord">
+                </a>
+                <a href="https://www.youtube.com/@BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-youtube-50.png" alt="YouTube">
+                </a>
+                <a href="https://twitter.com/BandiCraft" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/img/icons8-twitter-50.png" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+        <nav class="nav-card">
+            <a href="index.html">Inicio</a>
+            <a href="news.html">Noticias</a>
+            <a href="server.html">Servidor</a>
+            <a href="about.html">Sobre Nosotros</a>
+            <a href="support.html">Soporte</a>
+            <a href="tops.html">Tops</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="support-title">Soporte</h1>
+        <section class="support">
+            <h2>Centro de Soporte</h2>
+            <p>¿Tienes dudas o problemas? Únete a nuestro Discord o envíanos un mensaje directo.</p>
+            <p>Contamos con:</p>
+            <ul>
+                <li>Soporte 24/7</li>
+                <li>Atención rápida</li>
+                <li>Soluciones rápidas</li>
+                <li>Buen equipo de Staff</li>
+            </ul>
+            
+            <button class="toggle-form-btn" id="toggleForm">Abrir Formulario de Soporte</button>
+            
+            <div class="support-form-container">
+                <form id="supportForm" class="support-form" action="https://formsubmit.co/tucorreo@bandicraft.com" method="POST">
+    <!-- Campos ocultos adicionales -->
+    <input type="hidden" name="_subject" value="Nueva solicitud de soporte">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://tusitio.com/support.html?success=true">
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario (en el servidor):</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico (opcional):</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Título del Problema:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descripción Detallada:</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Solicitud</button>
+                    
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+            
+            <a href="https://discord.gg/Rux7WgPRbQ" class="btn btn-support">
+                <img src="../assets/img/icons8-discord-50.png" alt="Discord" class="discord-icon"> Ir a Discord
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BandiCraft Network</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        /* Configuración de partículas */
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Script para el formulario de soporte
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggleForm');
+            const supportForm = document.getElementById('supportForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Alternar visibilidad del formulario
+            toggleBtn.addEventListener('click', function() {
+                supportForm.classList.toggle('active');
+                toggleBtn.textContent = supportForm.classList.contains('active') ? 
+                    'Cerrar Formulario' : 'Abrir Formulario de Soporte';
+            });
+            
+            // Manejar envío del formulario
+            supportForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simular envío (en producción necesitarías un backend)
+                const username = document.getElementById('username').value;
+                const subject = document.getElementById('subject').value;
+                
+                // Mostrar mensaje de éxito
+                formMessage.textContent = `¡Gracias ${username}! Hemos recibido tu solicitud sobre "${subject}". Te contactaremos pronto.`;
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Limpiar formulario
+                supportForm.reset();
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
