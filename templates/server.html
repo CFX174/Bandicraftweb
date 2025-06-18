@@ -106,6 +106,7 @@
             <h2>Información del Servidor</h2>
             <p><strong>IP:</strong> bandicraft.ulaloud.com</p>
             <p><strong>Versiones:</strong> 1.13.x - 1.21.x</p>
+            <p id="total-jugadores"><strong>Total de jugadores conectados:</strong> <span id="total-users">Cargando...</span></p>
         </section>
 
         <section class="modalidades">
@@ -113,12 +114,12 @@
             <div class="modo">
                 <h3>Survival Custom</h3>
                 <p>Mundo survival con economía, rangos, mazmorras y eventos especiales.</p>
-                <p class="online"><img class="users" src="../assets/img/usuario.png"> 0/100</p>
+                <p class="online"><img class="users" src="../assets/img/usuario.png"> <span id="survival-users">Cargando...</span></p>
             </div>
             <div class="modo">
                 <h3>BoxPvp</h3>
                 <p>Combates en cajas con kits personalizados y arenas de batalla.</p>
-                <p class="online"><img class="users" src="../assets/img/usuario.png"> 0/100</p>
+                <p class="online"><img class="users" src="../assets/img/usuario.png"> <span id="boxpvp-users">Cargando...</span></p>
             </div>
         </section>
     </main>
@@ -130,6 +131,35 @@
     <script src="../assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
+    let survivalOnline = 0;
+    let boxpvpOnline = 0;
+    let survivalMax = 0;
+    let boxpvpMax = 0;
+
+    fetch('https://api.mcsrvstat.us/2/92.113.12.66:25565')
+      .then(r => r.json())
+      .then(data => {
+        survivalOnline = data.players ? data.players.online : 0;
+        survivalMax = data.players ? data.players.max : 0;
+        document.getElementById('survival-users').textContent =
+          data.players ? `${survivalOnline}` : 'Offline';
+        actualizarTotal();
+      });
+
+    fetch('https://api.mcsrvstat.us/2/europa.ulaloud.com:25558')
+      .then(r => r.json())
+      .then(data => {
+        boxpvpOnline = data.players ? data.players.online : 0;
+        boxpvpMax = data.players ? data.players.max : 0;
+        document.getElementById('boxpvp-users').textContent =
+          data.players ? `${boxpvpOnline}` : 'Offline';
+        actualizarTotal();
+      });
+
+    function actualizarTotal() {
+      const totalOnline = survivalOnline + boxpvpOnline;
+      document.getElementById('total-users').textContent = `${totalOnline}`;
+    }
         /* Configuración de partículas */
         particlesJS('particles-js',
         {
