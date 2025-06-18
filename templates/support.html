@@ -51,41 +51,7 @@
                 <li>Soluciones rápidas</li>
                 <li>Buen equipo de Staff</li>
             </ul>
-            
-            <button class="toggle-form-btn" id="toggleForm">Abrir Formulario de Soporte</button>
-            
-            <div class="support-form-container">
-                <form id="supportForm" class="support-form" action="https://formsubmit.co/tucorreo@bandicraft.com" method="POST">
-    <!-- Campos ocultos adicionales -->
-    <input type="hidden" name="_subject" value="Nueva solicitud de soporte">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://tusitio.com/support.html?success=true">
-                    <div class="form-group">
-                        <label for="username">Nombre de Usuario (en el servidor):</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico (opcional):</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Título del Problema:</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="description">Descripción Detallada:</label>
-                        <textarea id="description" name="description" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Enviar Solicitud</button>
-                    
-                    <div class="form-message" id="formMessage"></div>
-                </form>
-            </div>
-            
+        
             <a href="https://discord.gg/Rux7WgPRbQ" class="btn btn-support">
                 <img src="../assets/img/icons8-discord-50.png" alt="Discord" class="discord-icon"> Ir a Discord
             </a>
@@ -154,42 +120,6 @@
                 }
             },
             "retina_detect": true
-        });
-
-        // Script para el formulario de soporte
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.getElementById('toggleForm');
-            const supportForm = document.getElementById('supportForm');
-            const formMessage = document.getElementById('formMessage');
-            
-            // Alternar visibilidad del formulario
-            toggleBtn.addEventListener('click', function() {
-                supportForm.classList.toggle('active');
-                toggleBtn.textContent = supportForm.classList.contains('active') ? 
-                    'Cerrar Formulario' : 'Abrir Formulario de Soporte';
-            });
-            
-            // Manejar envío del formulario
-            supportForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simular envío (en producción necesitarías un backend)
-                const username = document.getElementById('username').value;
-                const subject = document.getElementById('subject').value;
-                
-                // Mostrar mensaje de éxito
-                formMessage.textContent = `¡Gracias ${username}! Hemos recibido tu solicitud sobre "${subject}". Te contactaremos pronto.`;
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                
-                // Limpiar formulario
-                supportForm.reset();
-                
-                // Ocultar mensaje después de 5 segundos
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            });
         });
     </script>
 </body>
